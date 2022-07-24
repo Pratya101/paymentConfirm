@@ -123,6 +123,7 @@ export default {
         customer_image: "",
         postback: "",
         user_id: "",
+        teams_id: "",
       },
     };
   },
@@ -149,8 +150,7 @@ export default {
     this.payData.shop_name = this.$route.query.shop_name;
     this.payData.shop_id_pri = this.$route.query.shop_id_pri;
     this.payData.user_id = this.$route.query.user_id;
-
-    console.log(this.payData);
+    this.payData.teams_id = this.$route.query.teams_id;
   },
   mounted() {
     let paramsQurey = "";
@@ -161,6 +161,7 @@ export default {
       shop_bank_id: this.payData.shop_bank_id,
       shop_id_pri: this.payData.shop_id_pri,
       user_id: this.payData.user_id,
+      teams_id: this.payData.teams_id,
     };
     if (data) {
       for (const [key, value] of Object.entries(data)) {
