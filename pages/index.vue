@@ -118,6 +118,7 @@ export default {
         lang: "",
         customer_id: "",
         shop_id: "",
+        shop_id_pri: "",
         shop_name: "",
         customer_image: "",
         postback: "",
@@ -145,6 +146,7 @@ export default {
     this.payData.postback = this.$route.query.postback;
     this.payData.shop_id = this.$route.query.shop_id;
     this.payData.shop_name = this.$route.query.shop_name;
+    this.payData.shop_id_pri = this.$route.query.shop_id_pri;
 
     console.log(this.payData);
   },
@@ -155,6 +157,7 @@ export default {
       order_pay_id: this.payData.order_pay_id,
       order_point_id: this.payData.order_point_id,
       shop_bank_id: this.payData.shop_bank_id,
+      shop_id_pri: this.payData.shop_id_pri,
     };
     if (data) {
       for (const [key, value] of Object.entries(data)) {
