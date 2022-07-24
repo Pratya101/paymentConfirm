@@ -7,6 +7,13 @@
     "_name": "_8b280b32"
   },
   {
+    "name": "success",
+    "path": "/success",
+    "component": "/Users/pratyaphocha/redirectConfirmPayment/pages/success.vue",
+    "chunkName": "pages/success",
+    "_name": "_44efe9e0"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/Users/pratyaphocha/redirectConfirmPayment/pages/index.vue",
