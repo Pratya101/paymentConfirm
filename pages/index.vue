@@ -13,6 +13,12 @@
         </v-avatar>
         <v-row class="mt-2">
           <v-col cols="6" class="text-right set-font-title py-1">
+            ข้อมูลคลินิก :
+          </v-col>
+          <v-col cols="6" class="text-left set-font-normal py-1"
+            >({{ payData.shop_id }}) {{ payData.shop_name }}</v-col
+          >
+          <v-col cols="6" class="text-right set-font-title py-1">
             รหัสลูกค้า :
           </v-col>
           <v-col cols="6" class="text-left set-font-normal py-1">{{
@@ -110,35 +116,16 @@ export default {
         customer_email: "",
         lang: "",
         customer_id: "",
+        shop_id: "",
+        shop_name: "",
         customer_image: "",
         postback: "",
-      },
-      payDataMock: {
-        order_id_pri: "903464",
-        order_id: "RECEIPT_NO_903464",
-        shop_bank_id: "2953",
-        order_pay_id: "2",
-        order_point_id: "1",
-        refno: "4243919299",
-        paysolutions_merchant: "47133361",
-        cc: "0",
-        customer_id_pri: "276636",
-        customer_tel: "0951481485",
-        order_totalpay: "170",
-        customer_fullname: "นาย Pratya Phocha",
-        customer_email: "gafai020@gmail.com",
-        lang: "TH",
-        customer_id: "C0164",
-        customer_image:
-          "https://s3-ap-southeast-1.amazonaws.com/apsth-assets-upload/customer/customer_276636_20211112094739.jpeg",
-        postback:
-          "https://6ca5-2405-9800-ba20-ce94-ac64-3369-e2a6-678e.ap.ngrok.io/postback",
       },
     };
   },
   created() {
     this.payData.order_id_pri = this.$route.query.order_id_pri;
-    this.payData.order_id = this.$route.query.order_id;
+    this.payData.order_id = `${this.$route.query.order_id} (${this.$route.query.shop_id})`;
     this.payData.shop_bank_id = this.$route.query.shop_bank_id;
     this.payData.order_pay_id = this.$route.query.order_pay_id;
     this.payData.order_point_id = this.$route.query.order_point_id;
@@ -155,6 +142,8 @@ export default {
     this.payData.customer_id = this.$route.query.customer_id;
     this.payData.customer_image = this.$route.query.customer_image;
     this.payData.postback = this.$route.query.postback;
+    this.payData.shop_id = this.$route.query.shop_id;
+    this.payData.shop_name = this.$route.query.shop_name;
 
     console.log(this.payData);
   },
@@ -171,7 +160,7 @@ export default {
         paramsQurey += `${key}=${value}&`;
       }
     }
-    this.postback += `?${paramsQurey}`;
+    this.payData.postback += `?${paramsQurey}`;
   },
 };
 </script>
