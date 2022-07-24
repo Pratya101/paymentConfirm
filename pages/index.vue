@@ -122,6 +122,7 @@ export default {
         shop_name: "",
         customer_image: "",
         postback: "",
+        user_id: "",
       },
     };
   },
@@ -147,6 +148,7 @@ export default {
     this.payData.shop_id = this.$route.query.shop_id;
     this.payData.shop_name = this.$route.query.shop_name;
     this.payData.shop_id_pri = this.$route.query.shop_id_pri;
+    this.payData.user_id = this.$route.query.user_id;
 
     console.log(this.payData);
   },
@@ -158,6 +160,7 @@ export default {
       order_point_id: this.payData.order_point_id,
       shop_bank_id: this.payData.shop_bank_id,
       shop_id_pri: this.payData.shop_id_pri,
+      user_id: this.payData.user_id,
     };
     if (data) {
       for (const [key, value] of Object.entries(data)) {
