@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <v-card max-width="500">
+    <v-card max-width="500" class="mt-5" rounded="xl" elevation="4">
       <v-card-title>
         <v-spacer></v-spacer>
         <span class="set-font">รายละเอียดการสั่งซื้อและชำระเงิน</span>
@@ -81,10 +81,11 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" type="submit">ยืนยัน</v-btn>
+          <v-btn color="primary" class="set-font" type="submit">ยืนยัน</v-btn>
           <v-btn
             outlined
             color="error"
+            class="set-font"
             :href="`https://app-apsth.com/orderdetial/${payData.order_id_pri}`"
             >ยกเลิก</v-btn
           >
@@ -165,7 +166,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Niramit:wght@300;400;500;600;700&display=swap");
 .set-font {
   font-family: "Niramit", sans-serif;
